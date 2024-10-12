@@ -22,6 +22,6 @@ static void accumulate_bench(benchmark::State &s) {
     benchmark::DoNotOptimize(result = std::accumulate(begin(v), end(v), 0));
   }
 }
-BENCHMARK(accumulate_bench)->DenseRange(20, 22)->Unit(benchmark::kMicrosecond);
+BENCHMARK(accumulate_bench)->DenseRange(10, 12)->Unit(benchmark::kMicrosecond);
 
 BENCHMARK_MAIN();
