@@ -18,8 +18,10 @@ static void accumulate_bench(benchmark::State &s) {
   int result = 0;
 
   // Main timing loop
-  for (auto _ : s) {
-    benchmark::DoNotOptimize(result = std::accumulate(begin(v), end(v), 0));
+  while (s.KeepRunning()) {
+    for (auto _ : s) {
+      benchmark::DoNotOptimize(result = std::accumulate(begin(v), end(v), 0));
+    }
   }
 }
 BENCHMARK(accumulate_bench)->DenseRange(10, 12)->Unit(benchmark::kMicrosecond);
