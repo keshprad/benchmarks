@@ -7,7 +7,7 @@
 #include <vector>
 
 static void accumulate_bench(benchmark::State &s) {
-  // set up num elements (2^10)
+  // set up num elements
   auto N = 1 << s.range(0);
 
   // Create vector of random numbers
